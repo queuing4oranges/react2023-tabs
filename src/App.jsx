@@ -10,32 +10,32 @@ const id = uuidv4();
 
 const App = () => {
   const [jobs, setJobs] = useState([])
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   const [currentItem, setCurrentItem] = useState(0)
 
   useEffect(() => {
-
-    const fetchJobs = async() => {
-      try{
-        setIsLoading(true);
-        const response = await fetch(url);
-        const result = await response.json();
-        console.log(result)
-        setJobs(result)
-        setIsLoading(false)
-      } catch(error) {
-        console.log(error)
-      }
-    }
     fetchJobs();
   }, [])
+  
+  const fetchJobs = async() => {
+      const response = await fetch(url);
+      const result = await response.json();
+      console.log(result)
+      setJobs(result)
+      setIsLoading(false)
+  }
 
+  if(isLoading) {
+    return (
+      <section className='jobs-center'>
+        <Loading />
+      </section>
+    )
+  }
  
   return (
     <div>
       <h2>Full Stack Web Developer</h2>
-      {isLoading &&
-      <Loading />}
 
       <BtnContainer
         currentItem={currentItem}

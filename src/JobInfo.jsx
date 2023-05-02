@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Duties from './Duties'
 // import BtnContainer from './BtnContainer'
 
