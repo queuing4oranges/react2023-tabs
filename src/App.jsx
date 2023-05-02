@@ -34,8 +34,8 @@ const App = () => {
   }
  
   return (
-    <div>
-      <h2>Full Stack Web Developer</h2>
+    <div className='tab-container'>
+      <h4 >Open Positions</h4>
 
       <BtnContainer
         currentItem={currentItem}
@@ -43,7 +43,10 @@ const App = () => {
         jobs={jobs}
         />
 
-      <JobInfo jobs={jobs}/>
+      <JobInfo 
+      jobs={jobs}
+      currentItem={currentItem}
+     />
   
     </div>
     )

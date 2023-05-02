@@ -3,16 +3,21 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Duties({ duties }) {
 
-    const id = uuidv4()
-    console.log(id)
 
-  return (
-    <div>
-        {duties.map((duty) =>(
-            <div id={id}>
-                <li>{duty}</li>
+    
+    return (
+        <div>
+        {duties.map((duty, index) =>{
+            const id = uuidv4()
+             
+            return(
+            <div className='duties-list' key={id}>
+                <li className='duties-list-item'> {duty}</li>
             </div>
-        ))}
+            )
+        })}
     </div>
   )
 }
+
+
