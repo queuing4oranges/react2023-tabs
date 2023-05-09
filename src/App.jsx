@@ -44,8 +44,8 @@ const App = () => {
         />
 
       <JobInfo 
-      jobs={jobs}
-      currentItem={currentItem}
+        jobs={jobs}
+        currentItem={currentItem}
      />
   
     </div>

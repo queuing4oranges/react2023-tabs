@@ -12,8 +12,6 @@ export default function BtnContainer({ jobs, setCurrentItem, currentItem }) {
             key={job.id}
             >{job.title}</button>
         ))}
-    
-    
     </div>
   )
 }
